@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Plate.png-c5d5850eb6c584c490f0606e678cfc5b.image"
+
+[deps]
+
+source_file="res://image/Plate.png"
+dest_files=[ "res://.import/Plate.png-c5d5850eb6c584c490f0606e678cfc5b.image" ]
+
+[params]
+

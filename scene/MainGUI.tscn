@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/gui/RightPanelText.gd" type="Script" id=1]
+[ext_resource path="res://script/gui/TileSelect.gd" type="Script" id=2]
+
+[node name="MainGUI" type="Control"]
+margin_right = 900.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightPanel" type="Panel" parent="."]
+margin_left = 802.0
+margin_top = 138.0
+margin_right = 900.0
+margin_bottom = 586.0
+rect_min_size = Vector2( 92, 448 )
+
+[node name="RightPanelText" type="VBoxContainer" parent="RightPanel"]
+margin_top = 38.0
+margin_right = 98.0
+margin_bottom = 70.0
+size_flags_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Life" type="Label" parent="RightPanel/RightPanelText"]
+margin_right = 98.0
+margin_bottom = 14.0
+text = "Text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PathLength" type="Label" parent="RightPanel/RightPanelText"]
+margin_top = 18.0
+margin_right = 98.0
+margin_bottom = 32.0
+text = "Text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftPanel" type="Panel" parent="."]
+margin_top = 138.0
+margin_right = 98.0
+margin_bottom = 586.0
+rect_min_size = Vector2( 92, 448 )
+
+[node name="TopBar" type="Panel" parent="."]
+anchor_right = 1.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 900, 138 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileSelect" type="HBoxContainer" parent="TopBar"]
+margin_left = 500.0
+margin_top = 37.0
+margin_right = 800.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grass" type="Button" parent="TopBar/TileSelect"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "Grass"
+
+[node name="Fire" type="Button" parent="TopBar/TileSelect"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "Fire"
+
+[node name="Path" type="Button" parent="TopBar/TileSelect"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "Path"

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Fire.png-539566022e10b3cb63ba5a255a00e33a.image"
+
+[deps]
+
+source_file="res://image/Fire.png"
+dest_files=[ "res://.import/Fire.png-539566022e10b3cb63ba5a255a00e33a.image" ]
+
+[params]
+

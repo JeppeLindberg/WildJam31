@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/HealthBarFull.png-c12a7c49c3cfe2e5003af0891ced8b69.image"
+
+[deps]
+
+source_file="res://image/HealthBarFull.png"
+dest_files=[ "res://.import/HealthBarFull.png-c12a7c49c3cfe2e5003af0891ced8b69.image" ]
+
+[params]
+
