@@ -31,15 +31,17 @@ __meta__ = {
 margin_right = 98.0
 margin_bottom = 14.0
 text = "Text"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PathLength" type="Label" parent="RightPanel/RightPanelText"]
+[node name="FireCount" type="Label" parent="RightPanel/RightPanelText"]
 margin_top = 18.0
 margin_right = 98.0
 margin_bottom = 32.0
 text = "Text"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

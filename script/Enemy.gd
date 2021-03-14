@@ -21,6 +21,7 @@ var _health: float = 10
 var _max_health: float = 0
 var _damage_timer: float = 0
 var _target_pos: Vector2
+var paused: bool = false
 
 
 func _ready():
@@ -43,6 +44,8 @@ func _ready():
 
 
 func _process(delta):
+	if paused:
+		return
 	_move(delta * _speed)
 	_process_damage(delta * 5)
 

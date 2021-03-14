@@ -50,4 +50,14 @@ func _on_CreateObject_sprite_created(sprite: Sprite):
 	if _tiles_dict[x][y] != null:
 		_ref_RemoveObject.remove(_tiles_dict[x][y])
 
-	_tiles_dict[pos[0]][pos[1]] = sprite
+	_tiles_dict[x][y] = sprite
+
+
+func get_number_of_tiles_of_type(type: String) -> int:
+	var count: int = 0
+	for x in range(_WorldSize.MAX_X):
+		for y in range(_WorldSize.MAX_Y):
+			if _tiles_dict[x][y].is_in_group(type):
+				count += 1
+	
+	return count
