@@ -8,11 +8,13 @@ var _EnemyWaves := preload("res://script/library/EnemyWaves.gd").new()
 
 const CreateObject := preload("res://script/CreateObject.gd")
 const PlayerControl := preload("res://script/PlayerControl.gd")
+const TilePainter := preload("res://script/TilePainter.gd")
 
 const ENEMY_PATH := "EnemyPath"
 
 var _ref_CreateObject: CreateObject
 var _ref_PlayerControl: PlayerControl
+var _ref_TilePainter: TilePainter
 
 var _enemies: Array
 var _state: String
@@ -49,6 +51,10 @@ func _start_round():
 	_enemies_to_spawn = _current_wave.count + floor((_wave_count-1) / 5 as float)
 	_enemy_spawn_timer_speed = _current_wave.frequency
 	_enemy_spawn_timer = 0.9
+
+	if _wave_count > 1 and (_wave_count-1) % 5 == 0:
+		_ref_TilePainter.set_max_fire_tiles_plus_one()
+	
 	emit_signal("round_started")
 
 

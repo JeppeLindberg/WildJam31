@@ -71,3 +71,8 @@ func _stop_paiting_path():
 func _on_PlayerControl_change_tile_type(type: String):
 	_current_tile_type = type
 
+
+func set_max_fire_tiles_plus_one()->void:
+	_max_fire_tiles += 1
+	var fire_tiles_count = _ref_PlayingBoard.get_number_of_tiles_of_type(_GroupName.TILE_FIRE)
+	emit_signal("update_fire_text", fire_tiles_count, _max_fire_tiles)

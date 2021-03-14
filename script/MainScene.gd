@@ -42,6 +42,8 @@ func _ready():
 	get_node("TilePainter")._ref_PlayerControl = get_node("PlayerControl")
 
 	get_node("TilePainter")._ref_PlayingBoard = get_node("PlayingBoard")
+
+	get_node("EnemyAI")._ref_TilePainter = get_node("TilePainter")
 	
 	get_node("World").ready_to_initialize = true
 	get_node("PlayerControl").ready_to_initialize = true
