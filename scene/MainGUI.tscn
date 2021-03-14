@@ -27,9 +27,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Life" type="Label" parent="RightPanel/RightPanelText"]
+[node name="WaveCounter" type="Label" parent="RightPanel/RightPanelText"]
 margin_right = 98.0
 margin_bottom = 14.0
+text = "Text"
+align = 1
+
+[node name="Life" type="Label" parent="RightPanel/RightPanelText"]
+margin_top = 18.0
+margin_right = 98.0
+margin_bottom = 32.0
 text = "Text"
 align = 1
 __meta__ = {
@@ -37,9 +44,9 @@ __meta__ = {
 }
 
 [node name="FireCount" type="Label" parent="RightPanel/RightPanelText"]
-margin_top = 18.0
+margin_top = 36.0
 margin_right = 98.0
-margin_bottom = 32.0
+margin_bottom = 50.0
 text = "Text"
 align = 1
 __meta__ = {

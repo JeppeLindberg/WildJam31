@@ -15,9 +15,9 @@ var _health_bar_fill: Sprite
 var _ConvertCoord := preload("res://script/library/ConvertCoord.gd").new()
 var _GroupName := preload("res://script/library/GroupName.gd").new()
 
-var _next_path_node: Array
 var _speed: float = 50
 var _health: float = 10
+var _next_path_node: Array
 var _max_health: float = 0
 var _damage_timer: float = 0
 var _target_pos: Vector2

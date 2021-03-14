@@ -25,8 +25,8 @@ func is_vector_in_coord(vector_coord: Vector2) -> bool:
         (vector_coord.y < START_Y):
         return false
 
-    if (vector_coord.x > START_X + STEP_X * _WorldSize.MAX_X) or \
-        (vector_coord.y > START_Y + STEP_Y * _WorldSize.MAX_Y):
+    if (vector_coord.x >= START_X + STEP_X * _WorldSize.MAX_X) or \
+        (vector_coord.y >= START_Y + STEP_Y * _WorldSize.MAX_Y):
         return false
     
     return true

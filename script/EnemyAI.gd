@@ -4,6 +4,7 @@ const Enemy := preload("res://sprite/Enemy.tscn")
 
 var _GroupName := preload("res://script/library/GroupName.gd").new()
 var _StateName := preload("res://script/library/StateName.gd").new()
+var _EnemyWaves := preload("res://script/library/EnemyWaves.gd").new()
 
 const CreateObject := preload("res://script/CreateObject.gd")
 const PlayerControl := preload("res://script/PlayerControl.gd")
@@ -13,13 +14,22 @@ const ENEMY_PATH := "EnemyPath"
 var _ref_CreateObject: CreateObject
 var _ref_PlayerControl: PlayerControl
 
-var _remaining_life: int = 10
 var _enemies: Array
-var _enemies_to_spawn: int = 0
 var _state: String
+var _waves: Array
+var _remaining_life: int = 10
 var _enemy_spawn_timer: float = 0
+var _wave_count: int = 0
+
+var _enemies_to_spawn: int = 0
+var _enemy_spawn_timer_speed: float = 1
 
 signal update_remaining_life(new_value)
+signal round_started()
+
+
+func _ready():
+	_waves = _EnemyWaves.get_all_waves()
 
 
 func _process(delta):
@@ -33,8 +43,13 @@ func _process(delta):
 
 
 func _start_round():
-	_enemies_to_spawn = 3
+	_wave_count += 1
+
+	var _current_wave = _waves[(_wave_count-1) % 5]
+	_enemies_to_spawn = _current_wave.count + floor((_wave_count-1) / 5 as float)
+	_enemy_spawn_timer_speed = _current_wave.frequency
 	_enemy_spawn_timer = 0.9
+	emit_signal("round_started")
 
 
 func _on_PlayerControl_change_state(new_state: String) -> void:
@@ -60,6 +75,9 @@ func enemy_reached_end() -> void:
 func _on_CreateObject_sprite_created(sprite: Sprite):
 	if sprite.is_in_group(_GroupName.ENEMY):
 		_enemies.append(sprite)
+		var current_wave = _waves[(_wave_count-1) % 5]
+		sprite._speed = current_wave.speed * (1 + (floor((_wave_count-1) / 5 as float) * 0.5))
+		sprite._health = current_wave.health * (1 + (floor((_wave_count-1) / 5 as float) * 0.5))
 
 		
 func _on_RemoveObject_sprite_removed(sprite: Sprite):

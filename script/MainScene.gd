@@ -23,6 +23,8 @@ func _ready():
 
 	__ = get_node("MouseControl").connect("mouse_release", get_node("TilePainter"), "_on_MouseControl_mouse_release")
 
+	__ = get_node("EnemyAI").connect("round_started", get_node("MainGUI/RightPanel/RightPanelText"), "_on_EnemyAI_round_started")
+
 	get_node("World")._ref_CreateObject = get_node("CreateObject")
 	get_node("EnemyAI")._ref_CreateObject = get_node("CreateObject")
 	get_node("EnemyAI/EnemyPath")._ref_CreateObject = get_node("CreateObject")
